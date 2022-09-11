@@ -24,19 +24,22 @@ export default class ImageApiService {
   constructor() {
     this.page = 1;
     this.searchQuery = "";
+    this.isFetching = false;
   }
   async fetchImage() {
     try {
+      this.isFetching = true;
       const response = await axios.get(
         `https://pixabay.com/api/?key=${API_KEY}=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=40`
       );
-      //   console.log(response.data.hits);
-    //   console.log(this.page);
+      // console.log(response);
+      //   console.log(this.page);
       this.incrementPage();
-      console.log(this.page);
+      this.isFetching = false;
+      // console.log(this.page);
       return response;
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   }
 
@@ -47,10 +50,22 @@ export default class ImageApiService {
   resetPage() {
     this.page = 1;
   }
+  get Page() {
+    return this.page;
+  }
+  set Page(newPage) {
+    this.page = newPage;
+  }
   get Query() {
     return this.searchQuery;
   }
   set Query(newQuery) {
     this.searchQuery = newQuery;
+  }
+  get isFetching1() {
+    return this.isFetching;
+  }
+  set isFetching1(newFetching) {
+    this.isFetching = newFetching;
   }
 }

@@ -1,7 +1,10 @@
 * {
   box-sizing: border-box;
 }
+/* html {
+  scroll-behavior: smooth;  
 
+} */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -10,6 +13,8 @@ body {
   margin: 0;
   padding: 0;
   text-decoration: none;
+  /* height: 2000px; */
+  /* height: 100vh; */
 }
 a {
   text-decoration: none;
@@ -96,6 +101,8 @@ li {
   margin-right: auto;
   padding: 0 12px;
   padding-top: 12px;
+  /* height: auto; */
+  /* overflow: scroll; */
 }
 .gallery__item {
   border-radius: 3px;
@@ -169,3 +176,78 @@ li {
     color: #fff;
     top: 5px;
 } */
+
+
+
+.page-load-status {
+  display: none; /* hidden by default */
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
+}
+
+.scroll-to-top {
+  position: relative;
+}
+
+.btn-position {
+  position: fixed;
+  bottom: 40px;
+  right: 25px;
+  z-index: 20;
+}
+
+.btn-style {
+  background-color: #ffffff;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  animation: movebtn 3s ease-in-out infinite;
+  transition: all 0.5s ease-in-out;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.icon-style:hover {
+  animation: none;
+  background: #fff;
+  color: #1b1f55;
+  border: 2px solid #000000;
+}
+
+@keyframes movebtn {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.gallery__image {  
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 0.5s ease-out 0s 1 slideInFromLeft;
+  
+
+
+}

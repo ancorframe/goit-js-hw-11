@@ -40,8 +40,11 @@
     "clean-webpack-plugin": "^4.0.0",
     "gh-pages": "^4.0.0",
     "handlebars-loader": "^1.7.2",
+    "imagesloaded": "^5.0.0",
     "lodash.debounce": "^4.0.8",
+    "masonry-layout": "^4.2.2",
     "notiflix": "^3.2.5",
+    "only-scrollbar": "^0.3.4",
     "simplelightbox": "^2.10.3",
     "svg-url-loader": "^7.1.1",
     "webpack-dev-server": "^4.10.1"
