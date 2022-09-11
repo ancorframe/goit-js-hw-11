@@ -28,7 +28,7 @@ function onSearch(e) {
   search = onSearchText;
   resetGallery();
   resetFetchPage();
-  llll();
+  fetchImageService();
 
   // setTimeout(() => {
   //   infScroll.loadNextPage();
@@ -201,7 +201,7 @@ function smoothScroll() {
   const { height: cardHeight } = document
     .querySelector(".gallery")
     .firstElementChild.getBoundingClientRect();
-  console.log(cardHeight);
+  // console.log(cardHeight);
   window.scrollBy({
     top: cardHeight * 2,
     behavior: "smooth",
